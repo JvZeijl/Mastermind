@@ -1,0 +1,155 @@
+body {
+    background-color: dimgrey;
+    margin: 0px 0px 0px 0px;
+}
+
+.bord {
+    border-spacing: 2px 2px;
+    border-collapse: separate;
+}
+
+.btn {
+    width: 30px;
+    height: 30px;
+    border-style: solid;
+    border-color: black;
+    border-width: 3px;
+}
+
+.red {
+    background-color: red;
+    color: red;
+}
+
+.blue {
+    background-color: blue;
+    color: blue;
+}
+
+.orange {
+    background-color: orange;
+    color: orange;
+}
+
+.green {
+    background-color: green;
+    color: green;
+}
+
+.silver {
+    background-color: silver;
+    color: silver;
+}
+
+.yellow {
+    background-color: yellow;
+    color: yellow;
+}
+
+.brown {
+    background-color: brown;
+    color: brown;
+}
+
+.purple {
+    background-color: purple;
+    color: purple;
+}
+
+td {
+    background-color: #fdd7a0;
+    width: 20px;
+    height: 20px;
+    border-width: 5px;
+    border-color: black;
+    border-style: solid;
+}
+
+.cap {
+    text-indent: 5px;
+    font-weight: bold;
+    background-color: dimgrey;
+    border-color: dimgrey;
+}
+
+.selector {
+    transform: scale(1.2);
+}
+
+h3 {
+    font-weight: bold;
+}
+
+.tab {
+    visibility: hidden;
+}
+
+.black {
+    background-color: black;
+}
+
+.white {
+    background-color: white;
+}
+
+.disp {
+    font-weight: bold;
+    font-size: 20px;
+    margin: 5px 0px 0px 0px;
+}
+
+#q {
+    font-weight: bold;
+    font-size: 27px;
+    background-color: dimgrey;
+    border-color: dimgrey;
+    position: relative;
+    left: 10px;
+    cursor: pointer;
+}
+
+#s {
+    font-size: 22px;
+    position: relative;
+    left: 13px;
+    cursor: pointer;
+}
+
+.menu {
+    position: absolute;
+    top: 5px;
+    left: 25px;
+    right: 20px;
+    background-color: rgba(254, 249, 251, 0.94);
+    margin: 0px 0px 0px 0px;
+    text-indent: 5px;
+    width: 321px;
+}
+
+.basis {
+    margin-top: 10px;
+}
+
+.close {
+    position: absolute;
+    left: 280px;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 23.6px;
+}
+
+.settings {
+    margin: 0px 0px 0px 0px;
+}
+
+.deselected {
+    background-color: #de0121;
+    border-color: #de0123;
+}
+
+.selected {
+    background-color: #01dc01;
+    border-color: #01ab01;
+}

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Master Mind</title>
+        <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+		<script src="game.js"></script>
+		<link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="basis" align="center">
+            <button class="red btn" onclick="addColor('red')"></button>
+            <button class="blue btn" onclick="addColor('blue')"></button>
+           <button class="green btn" onclick="addColor('green')"></button>
+            <button class="orange btn" onclick="addColor('orange')"></button>
+            <button class="brown btn" onclick="addColor('brown')"></button>
+            <button class="yellow btn" onclick="addColor('yellow')"></button>
+            <button class="purple btn" onclick="addColor('purple')"></button>
+            <button class="silver btn" onclick="addColor('silver')"></button>
+            <a id="q" onclick="help()">?</a>
+            <a id="s" onclick="settings()">⚙️</a>
+        </div>
+        <h3 align="center">Mastermind door: Joost van Zeijl</h3>
+        <table class="bord" align="center">
+            <tr class="r1">
+                <td class="r1 cap">1.</td>
+                <td class="r11 selector"></td>
+                <td class="r12"></td>
+                <td class="r13"></td>
+                <td class="r14"></td>
+                <td class="r15"></td>
+                <td class="tab"></td>
+                <td class="res11"></td>
+                <td class="res12"></td>
+                <td class="res13"></td>
+                <td class="res14"></td>
+                <td class="res15"></td>
+            </tr>
+            <tr class="r2">
+                <td class="r2 cap">2.</td>
+                <td class="r21"></td>
+                <td class="r22"></td>
+                <td class="r23"></td>
+                <td class="r24"></td>
+                <td class="r25"></td>
+                <td class="tab"></td>
+                <td class="res21"></td>
+                <td class="res22"></td>
+                <td class="res23"></td>
+                <td class="res24"></td>
+                <td class="res25"></td>
+            </tr>
+            <tr class="r3">
+                <td class="r3 cap">3.</td>
+                <td class="r31"></td>
+                <td class="r32"></td>
+                <td class="r33"></td>
+                <td class="r34"></td>
+                <td class="r35"></td>
+                <td class="tab"></td>
+                <td class="res31"></td>
+                <td class="res32"></td>
+                <td class="res33"></td>
+                <td class="res34"></td>
+                <td class="res35"></td>
+            </tr>
+            <tr class="r4">
+                <td class="r4 cap">4.</td>
+                <td class="r41"></td>
+                <td class="r42"></td>
+                <td class="r43"></td>
+                <td class="r44"></td>
+                <td class="r45"></td>
+                <td class="tab"></td>
+                <td class="res41"></td>
+                <td class="res42"></td>
+                <td class="res43"></td>
+                <td class="res44"></td>
+                <td class="res45"></td>
+            </tr>
+            <tr class="r5">
+                <td class="r5 cap">5.</td>
+                <td class="r51"></td>
+                <td class="r52"></td>
+                <td class="r53"></td>
+                <td class="r54"></td>
+                <td class="r55"></td>
+                <td class="tab"></td>
+                <td class="res51"></td>
+                <td class="res52"></td>
+                <td class="res53"></td>
+                <td class="res54"></td>
+                <td class="res55"></td>
+            </tr>
+            <tr class="r6">
+                <td class="r6 cap">6.</td>
+                <td class="r61"></td>
+                <td class="r62"></td>
+                <td class="r63"></td>
+                <td class="r64"></td>
+                <td class="r65"></td>
+                <td class="tab"></td>
+                <td class="res61"></td>
+                <td class="res62"></td>
+                <td class="res63"></td>
+                <td class="res64"></td>
+                <td class="res65"></td>
+            </tr>
+            <tr class="r7">
+                <td class="r7 cap">7.</td>
+                <td class="r71"></td>
+                <td class="r72"></td>
+                <td class="r73"></td>
+                <td class="r74"></td>
+                <td class="r75"></td>
+                <td class="tab"></td>
+                <td class="res71"></td>
+                <td class="res72"></td>
+                <td class="res73"></td>
+                <td class="res74"></td>
+                <td class="res75"></td>
+            </tr>
+            <tr class="r8">
+                <td class="r8 cap">8.</td>
+                <td class="r81"></td>
+                <td class="r82"></td>
+                <td class="r83"></td>
+                <td class="r84"></td>
+                <td class="r85"></td>
+                <td class="tab"></td>
+                <td class="res81"></td>
+                <td class="res82"></td>
+                <td class="res83"></td>
+                <td class="res84"></td>
+                <td class="res85"></td>
+            </tr>
+        </table>
+        <br/>
+        <div class="btns" align="center">
+            <button class="pos" onclick="selector(-1)">⬅</button>
+            <button class="pos" onclick="selector(1)">➡</button>
+            <button id="check" onclick="check()" disabled>Controleren</button>
+            <button id="giveup" onclick="giveUp()">Opgeven</button>
+            <button id="copy" onclick="copy()">Kopiëren</button>
+            <button id="reset" onclick="reset()" >Reset</button>
+            <button id="p1-choise" onclick="" hidden>Klaar</button>
+        </div>
+        <p align="center" class="disp">De kleurcode</p>
+        <table class="bord" align="center">
+            <tr>
+                <td id="d1"></td>
+                <td id="d2"></td>
+                <td id="d3"></td>
+                <td id="d4"></td>
+                <td id="d5"></td>
+            </tr>
+        </table>
+        <div class="menu" id="help" hidden>
+            <h8 class="title">Help<a class="close" onclick="help()">❌</a></h8>
+            <p><b>De pijltjes:</b> met de pijltjes kun je een vakje selecteren</p>
+            <p><b>Controleren:</b> controleert of jouw kleurcode goed is</p>
+            <p><b>Opgeven:</b>door op te geven krijg je de kleurcode onderaan te zien</p>
+            <p><b>Kopiëren: </b>deze knop kopiëert de vorige kleurcode naar de huidige rij</p>
+            <p><b>Zwart: </b>is een goede kleur op de goede plek</p>
+            <p><b>Wit: </b> is een goede kleur op de verkeerde plek</p>
+            <p><b>Reset: </b>met deze knop kun je een nieuw spel beginnen, met een nieuwe kleurcode</p>
+        </div>
+        <div class="menu" id="settings" hidden>
+            <h8 class="title">Instellingen<a class="close" onclick="settings()">❌</a></h8>
+            <p><b>Let op: </b> druk eerst op de reset-knop om </p>
+            <center><button class="deselected" onclick="twoPlayer()" id="two">Twee spelers</button></center>
+            <p>Als je dit aanzet, kan iemand <b>anders </b>de kleurcode bepalen (dus niet stiekem zelf doen!).</p>
+        </div>
+    </body>
+</html>
