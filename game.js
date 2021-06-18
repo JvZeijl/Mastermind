@@ -55,7 +55,7 @@ function setcolors() {
    return colors;
 }
 
-function checkDouble() {
+function checkDouble(checkBool) {
     var checkChoise = [];
     for(var i = 0; i < choise.length; i++) {
         if(checkChoise.indexOf(choise[i]) <= -1) {
@@ -260,9 +260,11 @@ function twoPlayer() {
 
 function p1Input(callBack) {
     $("#p1-choise").prop("hidden", false);
+    $(".btns button:not(#p1-choise)").prop("disabled", true);
     $("#p1-choise").click(function() {
         callBack();
         $("#p1-choise").prop("hidden", true);
+        $(".btns button:not(#p1-choise,#check)").prop("disabled", false);
         p1Chosing = false;
         for(var y = 1; y <= 5; y++) {
             var curRes = y;

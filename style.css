@@ -16,6 +16,14 @@ body {
     border-width: 3px;
 }
 
+button {
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: not-allowed;
+}
+
 .red {
     background-color: red;
     color: red;
@@ -117,13 +125,13 @@ h3 {
 
 .menu {
     position: absolute;
-    top: 5px;
-    left: 25px;
-    right: 20px;
+    top: 25%;
+    left: 50%;
     background-color: rgba(254, 249, 251, 0.94);
     margin: 0px 0px 0px 0px;
     text-indent: 5px;
     width: 321px;
+    transform: translate(-50%, -50%);
 }
 
 .basis {
@@ -133,6 +141,7 @@ h3 {
 .close {
     position: absolute;
     left: 280px;
+    cursor: pointer;
 }
 
 .title {
